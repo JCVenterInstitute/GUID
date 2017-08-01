@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>guid.db.interface</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>guid.db.interface</groupId>
+    <artifactId>ear</artifactId>
+    <version>1.0</version>
+    <packaging>ear</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>guid.db.interface</groupId>
+            <artifactId>server</artifactId>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>guid.db.interface</groupId>
+            <artifactId>servlet</artifactId>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>GuidDBInterface</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10.1</version>
+                <configuration>
+                    <modules>
+                        <jarModule>
+                            <groupId>org.jtc</groupId>
+                            <artifactId>common</artifactId>
+                            <includeInApplicationXml>true</includeInApplicationXml>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>guid.db.interface</groupId>
+                            <artifactId>server</artifactId>
+                            <bundleFileName>GuidDBInterface_server.jar</bundleFileName>
+                            <includeInApplicationXml>true</includeInApplicationXml>
+                        </jarModule>
+                        <webModule>
+                            <groupId>guid.db.interface</groupId>
+                            <artifactId>servlet</artifactId>
+                            <contextRoot>/guid</contextRoot>
+                            <bundleFileName>GuidDBInterface_servlet.war</bundleFileName>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

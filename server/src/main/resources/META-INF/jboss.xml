@@ -1,0 +1,34 @@
+<jboss>
+	<enterprise-beans>
+		<session>
+			<ejb-name>GuidDBInterface.GuidAdmin</ejb-name>
+			<jndi-name>GuidDBInterface.GuidAdmin</jndi-name>
+			<configuration-name>Standard Stateless SessionBean</configuration-name>
+		</session>
+        <session>
+            <ejb-name>GuidDBInterface.GuidClient</ejb-name>
+            <jndi-name>GuidDBInterface.GuidClient</jndi-name>
+            <configuration-name>Standard Stateless SessionBean</configuration-name>
+        </session>
+        <!-- commented out because of JBoss 5 complaints -->
+        <!-- <secure>false</secure> -->
+	</enterprise-beans>
+	<resource-managers/>
+	<container-configurations>
+		<container-configuration configuration-class="org.jboss.ejb.deployment.StatelessSessionContainerConfiguration">
+			<container-name>Standard Stateless SessionBean</container-name>
+			<container-invoker>org.jboss.proxy.ejb.ProxyFactory</container-invoker>
+			<instance-pool>org.jboss.ejb.plugins.StatelessSessionInstancePool</instance-pool>
+			<instance-cache/>
+			<persistence-manager/>
+			<container-invoker-conf>
+				<Optimized>False</Optimized>
+			</container-invoker-conf>
+			<container-pool-conf>
+				<MaximumSize>20</MaximumSize>
+				<MinimumSize>2</MinimumSize>
+			</container-pool-conf>
+			<!-- <security-domain>java:/jaas/EJBSecurityDomain</security-domain>-->
+		</container-configuration>
+	</container-configurations>
+</jboss>
