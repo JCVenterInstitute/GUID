@@ -13,6 +13,7 @@
         <module>server</module>
         <module>servlet</module>
         <module>ear</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>
@@ -32,6 +33,12 @@
             <dependency>
                 <groupId>guid.db.interface</groupId>
                 <artifactId>ear</artifactId>
+                <version>1.0</version>
+                <type>ear</type>
+            </dependency>
+            <dependency>
+                <groupId>guid.db.interface</groupId>
+                <artifactId>common</artifactId>
                 <version>1.0</version>
                 <type>ear</type>
             </dependency>
