@@ -18,6 +18,12 @@
     <dependencies>
         <dependency>
             <groupId>guid.db.interface</groupId>
+            <artifactId>resources</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>guid.db.interface</groupId>
             <artifactId>common</artifactId>
             <version>1.0</version>
             <type>jar</type>
@@ -47,6 +53,12 @@
                             <groupId>guid.db.interface</groupId>
                             <artifactId>common</artifactId>
                             <includeInApplicationXml>true</includeInApplicationXml>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>guid.db.interface</groupId>
+                            <artifactId>resources</artifactId>
+                            <bundleFileName>resources.jar</bundleFileName>
+                            <bundleDir>/lib</bundleDir>
                         </jarModule>
                         <jarModule>
                             <groupId>guid.db.interface</groupId>
