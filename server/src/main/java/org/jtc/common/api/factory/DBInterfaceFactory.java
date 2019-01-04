@@ -84,7 +84,7 @@ abstract public class DBInterfaceFactory {
 
     private Context getRemoteInitialContext(String providerUrl) throws SystemErrorException {
         InitialContext context = null;
-        properties.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
+        properties.put(Context.INITIAL_CONTEXT_FACTORY, "org.wildfly.naming.client.WildFlyInitialContextFactory");
         properties.put(Context.PROVIDER_URL, providerUrl);
         for (int i=0;i<DBInterfaceFactory.MAX_RETRIES;i++) {
             try {

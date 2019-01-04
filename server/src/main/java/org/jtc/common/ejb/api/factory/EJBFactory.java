@@ -178,9 +178,8 @@ public abstract class EJBFactory {
     }
 
     private Context getRemoteInitialContext(String providerUrl) throws SystemErrorException {
-        this.properties.put("java.naming.factory.initial", "org.jboss.naming.remote.client.InitialContextFactory");
+        this.properties.put("java.naming.factory.initial", "org.wildfly.naming.client.WildFlyInitialContextFactory");
         this.properties.put("java.naming.provider.url", providerUrl);
-        this.properties.put("java.naming.factory.url.pkgs", "org.jboss.ejb.client.naming");
         this.properties.put("jboss.naming.client.ejb.context", true);
 
         for(int i = 0; i < 3; ++i) {
